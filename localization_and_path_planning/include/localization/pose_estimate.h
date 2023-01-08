@@ -116,6 +116,8 @@ public:
 				}					
 			}
 		}
+
+		return nullptr;
 	}
 
 	const Vector3& getRobotPose() const

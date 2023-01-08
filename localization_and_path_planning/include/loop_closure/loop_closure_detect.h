@@ -5,6 +5,8 @@
 #include <vector>
 #include <Eigen/Dense>
 
+#include <opencv2/imgproc/types_c.h>
+
 namespace loop
 {
 

@@ -60,6 +60,8 @@ public:
         	key_event.callback = callback;
 
 	        event_base.addEvent( key_event );
+		
+		return true;
 	}
 
 	void spin()
@@ -97,7 +99,7 @@ public:
 		}
 
 
-		
+		return nullptr;
 	}
 
 	template<typename ...Args>
