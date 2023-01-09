@@ -7,7 +7,7 @@
 
 #include <opencv2/opencv.hpp>
 
-#define MAX_RECV_SIZE 1000
+#define MAX_RECV_SIZE 1400
 
 namespace transport
 {
@@ -65,7 +65,9 @@ public:
 				if( len != 4 ){
 					memcpy( &image_data.data()[MAX_RECV_SIZE * recv_count], &recv_buffer[4], len - 4 );
 					// load image
-					image = cv::imdecode( cv::Mat( 1, image_size, CV_8UC1, image_data.data() ), CV_LOAD_IMAGE_UNCHANGED );
+					//image = cv::imdecode( cv::Mat( 1, image_size, CV_8UC1, image_data.data() ), CV_LOAD_IMAGE_UNCHANGED );
+					image = cv::imdecode( cv::Mat( 1, image_size, CV_8UC1, image_data.data() ), cv::IMREAD_UNCHANGED );
+					cv::flip( image, image, 0 );
 					cv::imshow("video", image);
 					cv::waitKey(5);
 
@@ -79,6 +81,7 @@ public:
 
 		}
 		
+		return nullptr;
 	}
 
 	void spin()
