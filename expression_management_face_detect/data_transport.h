@@ -145,7 +145,7 @@ public:
 	
 	}
 
-private:
+protected:
 	int sock_fd = -1;
 };
 

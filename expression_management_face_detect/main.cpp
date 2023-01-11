@@ -1,5 +1,7 @@
 #include "images_receive.h"
 
+#include "expression_manage.h"
+
 int main()
 {
 	std::cout<<"----------------------- RECV VIDEO TEST ------------------ "<<std::endl;
